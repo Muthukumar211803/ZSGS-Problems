@@ -1,8 +1,14 @@
 import java.util.Scanner;
+//ZSGS_PROBLEMS01
+ public class ZSGS_PROBLEMS01{
+    public static void main(String[] args){
+   System.out.print("Question 01 to 10 problems.");
+    }
+}
 
 //01.Binary,Octal,Hexadecimal value
 
-public class ZSGS_PROBLEMS{
+class BinaryOctalHexas{
  public static void main(String[] args) {
 
 Scanner sc = new Scanner(System.in);
