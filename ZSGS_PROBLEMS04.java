@@ -93,22 +93,94 @@ class SecondSmallestNumber{
 }
 
 //36 FrequencyElement
-class FrequencyElement{
+class FrequencyElement {
+public static void main(String[] args) {
+     int[] arr = {1, 3, 1, 2, 3, 4};
+     int visited = -1;
+    for (int i = 0; i < arr.length; i++) {
+     if (arr[i] == visited) {
+     continue;
+ }
+     int count = 1;
+    for (int j = i + 1; j < arr.length; j++) {
+     if (arr[i] == arr[j]) {
+     count++;
+      arr[j] = visited; 
+}
+ }
+    System.out.println(arr[i] + " -> " + count);
+    }
+}
+}
+
+
+//37.ReverseNumber
+class ReverseNumber{
+  public static int reverseNum(int n){
+   int reverse=0;
+   while(n!=0){
+    int mod=n%10;
+     reverse=reverse*10+mod;
+     n=n/10;
+}
+  return reverse;
+}
+public static void main(String[] args) {
+    System.out.println(reverseNum(12345));
+}
+}
+
+//38 DeleteArray
+class DeleteArray{
     public static void main(String[] args) {
-    int[] arr={1,3,1,2,3,4};
-    
-    int visited=-1;
+    int[] arr={1,2,3,4,5};
+    int deletevalue=4;
+    int indexTodelete=-1;
     for(int i=0;i<arr.length;i++){
-    if(arr[i]!=visited){
-        int count=1;
-    }
-    for(int j=i+1; j<arr.length; j++){
-        if(arr[i]==arr[j]){
-         count++;
-        arr[j]=visited;
-        }
+    if(arr[i]==deletevalue){
+        indexTodelete=i;
+        break;
     }
 }
-    System.out.println(arr[i]+ "->"+count);
+    if(indexTodelete!=-1){
+        for(int i=indexTodelete; i<arr.length-1;i++){
+        arr[i]=arr[i+1];
+     }
+     System.out.print("Arrays to delete"+deletevalue);
+     for(int i=0;i<arr.length-1;i++){
+        System.out.println(arr[i]+"");
+     }
+     
     }
 }
+}
+
+//39 AverageArray
+class AverageArray{
+    public static void main(String[] args){
+   int[] arr={10,20,30,40,50,60};
+   int sum=0;
+   for(int i=0; i<arr.length; i++){
+    sum=sum+arr[i];
+   }
+   double average=(double) sum/arr.length;
+   System.out.println("Average" +average);
+}
+}
+
+//40 InverseArray
+class InverseArray{
+    public static void main(String[] args) {
+     int[] arr={2,4,6,8,10};
+     int[] inverse=new int[arr.length];
+     for(int i=0; i<arr.length; i++){
+        inverse[i]=arr[arr.length-1-i];
+    }
+    System.out.println(Arrays.toString(inverse));
+}
+}
+
+
+
+
+
