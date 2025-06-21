@@ -255,7 +255,10 @@ class RecurisionReverse2{
 //50 NumberToWord
 class NumberToWord{
     public static void main(String[] args){
-        
+    
+
+    }
+
 
 
     
