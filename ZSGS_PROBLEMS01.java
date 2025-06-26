@@ -165,6 +165,19 @@ class QuotientandRemainder{
     }
 }
 
+//08LongAndDouble
+class LongAndDouble{
+    public static void main(String[] args){
+        long secondsInYear = 365L * 24 * 60 * 60;
+        double radius = 7.5;                     
+        double area = 3.14159 * radius * radius;  
+
+        System.out.println("Seconds in a year: " + secondsInYear);
+        System.out.println("Area of the circle: " + area);
+    }
+}
+
+
 //09 Swep Two numbers
 class Sweptwonumbers{
     public static void main(String[] args) {

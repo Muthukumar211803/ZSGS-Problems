@@ -1,4 +1,5 @@
 import java.util.Scanner;
+ 
 public class ZSGS_PROBLEMS05{
     public static void main(String[] args){
    System.out.print("Question 41 to 50 problems.");
@@ -252,12 +253,50 @@ class RecurisionReverse2{
     }
 }
 
-//50 NumberToWord
-class NumberToWord{
-    public static void main(String[] args){
-    
+//50 NumberToWords
+  public class ShortNumberToWords {
+    static String[] units = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
+    static String[] teens = {"Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen",
+                             "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+    static String[] tens = {"", "", "Twenty", "Thirty", "Forty", "Fifty", 
+                            "Sixty", "Seventy", "Eighty", "Ninety"};
 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(numberToWords(n));
     }
+
+    static String numberToWords(int n) {
+        if (n == 0) return "Zero";
+
+        StringBuilder sb = new StringBuilder();
+
+        if (n >= 100) {
+            sb.append(units[n / 100]).append(" Hundred");
+            if (n % 100 != 0) sb.append(" and ");
+        }
+
+        n %= 100;
+
+        if (n >= 10 && n < 20) {
+            sb.append(teens[n - 10]);
+        } 
+        else {
+            if (n >= 20) sb.append(tens[n / 10]);
+            if (n % 10 != 0) {
+              if (n >= 20) sb.append(" ");
+               sb.append(units[n % 10]);
+        }
+    }
+
+        return sb.toString();
+    }
+}
+
+
+
+    
 
 
 

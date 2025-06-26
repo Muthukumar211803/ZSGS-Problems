@@ -37,31 +37,85 @@ public static void main(String[] args){
 
 //25.FinalKeyword
 
-//class FinalKeyword{
-   // public static void main(String[] args){
-    //    final int x=10; 
-     //   x=4;
-      // System.out.println(x);
-  //  }
-//} 
+   final class FinalClass {
+    void display() {
+        System.out.println("Inside final class");
+    }
+}
+
+class Demo {
+    final int number = 10;
+
+    final void show() {
+        System.out.println("Final Method Number = " + number);
+    }
+}
+
+class FinalKeywordShortDemo {
+    public static void main(String[] args) {
+        FinalClass obj1 = new FinalClass();
+        obj1.display();
+
+        Demo obj2 = new Demo();
+        obj2.show();
+    }
+}
+ 
 
 //26 TwoSortedArray
 
-// class TwoSortedArray{
-//     public static void main(String[] args){
-//     int[] array1={2,4,5,6,7,8,9,10,13};
-//     int[] array2={2,3,4,5,6,7,8,9,11,15};
-//     int[] array3= new int[array1.length+array2.length];
+   class MergeAndRepeatArray {
+    public static void main(String[] args) {
+      int[] arr1 = {2, 4, 5, 6, 7, 9, 10, 13};
+      int[] arr2 = {2, 3, 4, 5, 6, 7, 8, 9, 11, 15};
+      int[] merged = new int[arr1.length + arr2.length];
+      int i = 0, j = 0, index = 0;
+       System.out.print("Repeated elements: ");
+        boolean first = true;
+      while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] < arr2[j]) {
+        if (index == 0 || merged[index - 1] != arr1[i]) {
+          merged[index++] = arr1[i];
+    }
+         i++;
+     } 
+        else if (arr1[i] > arr2[j]) {
+            if (index == 0 || merged[index - 1] != arr2[j]) {
+              merged[index++] = arr2[j];
+    }
+            j++;
+        } 
+        else {
+           if (!first) System.out.print(", ");
+            System.out.print(arr1[i]);
+             first = false;
+             
+           if (index == 0 || merged[index - 1] != arr1[i]) {
+              merged[index++] = arr1[i];
+        }
+             i++;
+             j++;
+    }
+     }
+        while (i < arr1.length) {
+            if (index == 0 || merged[index - 1] != arr1[i]) {
+               merged[index++] = arr1[i];
+     }
+            i++;
+        }
 
-//     for(int i=0;i<array1.length-1;i++){
-//         array3[i++]=array1[i];
-//     }
-//     for(int i=0;i<array2.length-1;i++){
-//         array3[i++]=array2[i];
-//     }
-//     System.out.println(Arrays.toString(array3));
-// }
-// }
+        while (j < arr2.length) {
+            if (index == 0 || merged[index - 1] != arr2[j]) {
+              merged[index++] = arr2[j];
+    }
+            j++;
+        }
+
+        int[] newArray = Arrays.copyOf(merged, index);
+        System.out.println("\n Merged Array: " + Arrays.toString(newArray));
+    }
+}
+
 
 
 //27MultidimensionalArray
